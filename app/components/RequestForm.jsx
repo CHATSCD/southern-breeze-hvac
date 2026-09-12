@@ -51,7 +51,7 @@ export default function RequestForm() {
         setMessage(
           result.error === 'not_configured'
             ? 'Our online form is briefly offline — calling is faster anyway.'
-            : 'We couldn’t send that request just now.',
+            : 'We could not send that request just now.',
         );
         return;
       }
@@ -113,7 +113,7 @@ export default function RequestForm() {
           />
         </Field>
 
-        <Field label="What&rsquo;s going on?" htmlFor="rf-service">
+        <Field label="What's going on?" htmlFor="rf-service">
           <select id="rf-service" name="service" className="field" defaultValue={SERVICE_OPTIONS[0]}>
             {SERVICE_OPTIONS.map((option) => (
               <option key={option} value={option}>
@@ -197,7 +197,10 @@ export default function RequestForm() {
 function Field({ label, htmlFor, hint, children }) {
   return (
     <div>
-      <label htmlFor={htmlFor} className="mb-1.5 block text-[13px] font-bold uppercase tracking-wide text-slateblue-light">
+      <label
+        htmlFor={htmlFor}
+        className="mb-1.5 block text-[13px] font-bold uppercase tracking-wide text-slateblue-light"
+      >
         {label}
       </label>
       {children}
