@@ -53,10 +53,13 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/* Bottom padding reserves space for the always-visible sticky call bar. */}
-      <body className="pb-[calc(88px+env(safe-area-inset-bottom))] antialiased">
+      {/*
+        Bottom padding reserves space for the always-visible sticky call bar.
+        Note the underscores: Tailwind turns them into the spaces that CSS calc() requires.
+      */}
+      <body className="pb-[calc(88px_+_env(safe-area-inset-bottom))] antialiased">
         <a
-          href="#services"
+          href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 focus:rounded-lg focus:bg-slateblue-dark focus:px-4 focus:py-2 focus:text-sm focus:font-bold focus:text-white"
         >
           Skip to content
